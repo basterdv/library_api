@@ -1,10 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block base_body%}
 
-</body>
-</html>
+<!--<main class="form-signin w-100 m-auto">-->
+    <div class="container">
+    <form id="registration-form">
+
+        <div><p>Регистрация пользователя.</p></div>
+
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="first_name" placeholder="Имя" aria-label="first_name"
+                   aria-describedby="basic-addon1" required>
+            <input type="text" class="form-control" id="last_name" placeholder="Фамилия" aria-label="last_name"
+                   aria-describedby="basic-addon1" required>
+        </div>
+
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="email" placeholder="Email" aria-label="email"
+                   aria-describedby="basic-addon1" required>
+            <input type="text" class="form-control" id="phone_number" placeholder="Телефон" aria-label="phone_number"
+                   aria-describedby="basic-addon1" required>
+        </div>
+
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="password" placeholder="Пароль" aria-label="password"
+                   aria-describedby="basic-addon1" required>
+            <input type="text" class="form-control" id="confirm_password" placeholder="Подтвердить пароль"
+                   aria-label="confirm_password"
+                   aria-describedby="basic-addon1" required>
+        </div>
+        <!-- Submit button -->
+        <div class="d-grid gap-2 col-6 mx-auto">
+
+            <button class="btn btn-primary btn-lg" type="submit" onclick="regFunction(event)">Зарегистрировать</button>
+            <button class="btn btn-outline-secondary btn-lg" type="submit" onclick=location.href="/login">Отмена
+            </button>
+
+
+        </div>
+
+    </form>
+    </div>
+<!--</main>-->
+
+
+{% endblock base_body%}

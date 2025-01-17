@@ -35,6 +35,19 @@ async def login_page(request: Request) :
     response = templates.TemplateResponse("/login.html", context)
     return response
 
+@router.get("/register", summary="Регистрация пользователя.")
+async def register_page(request: Request) :
+
+    context = {
+        "request": request,
+        # "posts": posts,
+        "title": "Register Page",
+        "isRegister": True
+    }
+
+    response = templates.TemplateResponse("/register.html", context)
+    return response
+
 
 @router.get("/catalog", summary="Каталог книг.")
 async def catalog_page(request: Request, session: AsyncSession = SessionDep) -> _TemplateResponse:
