@@ -1,7 +1,7 @@
 import asyncio
 from logging.config import fileConfig
 # from app.models import Books,Authors,Books
-from app.dao import Base, DATABASE_URL
+from app.dao.database import Base, DATABASE_URL
 # from app.models import Books,Authors,BookAuthors
 from sqlalchemy import pool
 from sqlalchemy.engine import Connection

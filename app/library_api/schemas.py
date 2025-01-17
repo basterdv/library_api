@@ -1,6 +1,5 @@
 import re
 from datetime import datetime
-
 from pydantic import BaseModel, Field, field_validator
 from sqlalchemy import Nullable
 from typing_extensions import Optional

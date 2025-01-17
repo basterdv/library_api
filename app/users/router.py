@@ -35,7 +35,6 @@ async def register_user(user_data: SUserRegister, session: AsyncSession = Transa
 
 @router.post("/login_user", summary="Авторизация пользователя.")
 async def login_user(response: Response, user_data: SUserAuth, session: AsyncSession = SessionDep):
-
     check = await authenticate_user(session=session, email=user_data.email, password=user_data.password)
 
     if check is None:
@@ -53,7 +52,7 @@ async def logout_user(response: Response):
 
 
 @router.get("/me/", summary="Тест администратора.")
-async def get_me(user_data: User = Depends(get_current_user)) ->  SUserInfo:
+async def get_me(user_data: User = Depends(get_current_user)) -> SUserInfo:
     return SUserInfo.model_validate(user_data)
 
 

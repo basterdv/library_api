@@ -69,4 +69,3 @@ class LoginForm(BaseModel):
         description='Enter whatever value you like, password is not checked',
         json_schema_extra={'autocomplete': 'current-password'},
     )
-
