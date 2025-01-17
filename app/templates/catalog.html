@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block base_body%}
+
+<!--{% if data %}-->
+<!--        {% for book in data %}-->
+<!--        <div class="book">-->
+<!--            <div>-->
+
+<!--                <b>{{book.title}}</b>-->
+<!--            </div>-->
+<!--            <small>{{book.description}}</small>-->
+<!--        </div>-->
+
+
+<!--        {% endfor %}-->
+<!--        {% endif %}-->
+
+<main>
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Пример каталога книг.</h1>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-body-tertiary">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          {% if data %}
+          {% for book in data %}
+
+
+              <div class="card shadow-sm">
+                  <div class="col-md-4">
+                    <img src="../app/static/images/image_book.jpg" class="img-fluid rounded-start" alt="...">
+                      </div>
+                  <div class="col">
+
+
+
+                  <div class="card-body">
+                      <p class="card-text">{{book.description}}</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                              <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                              <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                          </div>
+                          <small class="text-body-secondary">Дата публикации: {{book.publication_date}}</small>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          {% endfor %}
+          {% endif %}
+
+      </div>
+    </div>
+  </div>
+
+</main>
+
+{% endblock base_body%}
