@@ -85,8 +85,16 @@ pip install -r requirements.txt
    ```bash
    git clone https://github.com/basterdv/library_api .
    ```
+2. Установить виртуальное окружение и активировать его  
 
-2. Настройте файл `.env`:
+   ```bash
+   python -m venv venv
+   ```
+   ```bash
+   venv/Scripts/activate
+    ```
+
+3. Настройте файл `.env`:
 
    ```Настройки для подключения к базе данных PostgreSQL
    
@@ -100,7 +108,7 @@ pip install -r requirements.txt
    ALGORITHM=HS256
    ```
 
-3. Создайте и примените миграции базы данных:
+4. Создайте и примените миграции базы данных:
 
    ```bash
    cd app
@@ -109,7 +117,7 @@ pip install -r requirements.txt
    alembic upgrade head
    ```
 
-4. Запустите приложение:
+5. Запустите приложение:
 
    ```bash
    uvicorn app.main:app --reload
